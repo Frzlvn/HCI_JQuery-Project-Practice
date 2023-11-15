@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Coffee Shop FAQs</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        color: #333;
+      }
+
+      header {
+        background-color: #4d4d4d;
+        color: #fff;
+        text-align: center;
+        padding: 1em 0;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-item {
+        margin-bottom: 20px;
+      }
+
+      .question {
+        cursor: pointer;
+        padding: 15px;
+        background-color: #eee;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .answer {
+        display: none;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+      .back-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="./index.html"
+      class="back-button"
+    >
+      <button><<<<<<</button>
+    </a>
+    <header>
+      <h1>𝖋𝖊𝖗𝖎𝖟𝖆 𝖈𝖔𝖋𝖋𝖊𝖊 𝖘𝖍𝖔𝖕 𝓕𝓐𝓠s</h1>
+    </header>
+
+    <main>
+      <div class="faq-item">
+        <div
+          class="question"
+          onclick="toggleAnswer(1)"
+        >
+          What types of coffee do you serve?
+        </div>
+        <div
+          class="answer"
+          id="answer1"
+        >
+          We offer a variety of coffees including espresso, cappuccino, latte, macchiato and special blends.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div
+          class="question"
+          onclick="toggleAnswer(2)"
+        >
+          Does it offer customers free Wi-Fi?
+        </div>
+        <div
+          class="answer"
+          id="answer2"
+        >
+          sure! We offer free Wi-Fi for customers, so they can stay connected while drinking their coffee.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div
+          class="question"
+          onclick="toggleAnswer(3)"
+        >
+          Can I reserve a table for a larger group or event?
+        </div>
+        <div
+          class="answer"
+          id="answer3"
+        >
+          exactly! Coordination for large groups and events is welcome. Contact us in advance to schedule your special event.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div
+          class="question"
+          onclick="toggleAnswer(4)"
+        >
+          Are your coffee beans ethically sourced?
+        </div>
+        <div
+          class="answer"
+          id="answer4"
+        >
+          Yes, we are committed to ethical sourcing practices. Our coffee beans are carefully selected from sustainable and marketable suppliers to ensure quality and responsibility.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div
+          class="question"
+          onclick="toggleAnswer(5)"
+        >
+          Do you offer dairy free or vegan options?
+        </div>
+        <div
+          class="answer"
+          id="answer5"
+        >
+          sure! We offer a variety of milk options including soy milk, almond milk and oat milk to suit a variety of dietary preferences.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div
+          class="question"
+          onclick="toggleAnswer(6)"
+        >
+          Do you have loyalty or rewards programs for frequent customers?
+        </div>
+        <div
+          class="answer"
+          id="answer6"
+        >
+          Yes, we value our loyal customers. We offer a rewards program that offers discounts, free drinks and exclusive promotions to our frequent visitors.
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function toggleAnswer(id) {
+        const answer = document.getElementById(`answer${id}`);
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </body>
+</html>

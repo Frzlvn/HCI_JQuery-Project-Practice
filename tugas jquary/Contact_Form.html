@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Alvin Feriza</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://easyretro.io/blog/assets/images/ms-how-blur-bg-cover.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+        form {
+            max-width: 500px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: #000000;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: #e74c3c;
+            margin-top: -5px;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        
+       .back-button {
+           position: absolute;
+           top: 10px;
+           left: 10px;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+
+        p {
+            color: #cfcaca;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        
+    </style>
+</head>
+<body>
+    <a
+      href="./index.html"
+      class="back-button"
+    >
+      <button><<<<<<</button>
+    </a>
+
+    <h1>Contact Alvin Feriza</h1>
+    <p>Your feedback is important to me. Please fill out the form below, </p>
+    <p>and I will contact you as soon as possible!</p>
+
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <div class="error" id="nameError"></div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div class="error" id="emailError"></div>
+
+        <label for="rating">Rate our coffee shop:</label>
+        <select id="rating" name="rating" required>
+            <option value="">Select...</option>
+            <option value="5">Very Good</option>
+            <option value="4">Good</option>
+            <option value="3">Neutral</option>
+            <option value="2">Bad</option>
+            <option value="1">Very Bad</option>
+        </select>
+        <div class="error" id="ratingError"></div>
+
+        <label for="comments">Comments and Suggestions:</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Reset error messages
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('ratingError').textContent = '';
+
+            // Validate Name
+            const name = contactForm.elements['name'].value;
+            if (name.length < 3) {
+                document.getElementById('nameError').textContent = 'Please enter a valid name.';
+                return;
+            }
+
+            // Validate Email
+            const email = contactForm.elements['email'].value;
+            if (!email.includes('@')) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+                return;
+            }
+
+            // Validate Rating
+            const rating = contactForm.elements['rating'].value;
+            if (!rating) {
+                document.getElementById('ratingError').textContent = 'Please select a rating.';
+                return;
+            }
+
+            console.log('Name:', name);
+            console.log('Email:', email);
+            console.log('Rating:', rating);
+            console.log('Comments:', contactForm.elements['comments'].value);
+
+       
