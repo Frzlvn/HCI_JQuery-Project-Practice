@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Menu</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url("https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat center center fixed;
+        background-size: cover;
+        background-color: #f4f4f4;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1em 0;
+      }
+
+      .calculator {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #total-price {
+        font-size: 1.2em;
+        margin-top: 20px;
+      }
+
+      .back-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="./index.html"
+      class="back-button"
+    >
+      <button><<<<<<</button>
+    </a>
+
+    <header>
+      <h1>𝖋𝖊𝖗𝖎𝖟𝖆 𝖈𝖔𝖋𝖋𝖊𝖊 𝖘𝖍𝖔𝖕</h1>
+      <h4>order your coffee here</h4>
+    </header>
+
+    <div class="calculator">
+      <label for="coffee-menu">Select Your Coffee:</label>
+      <select id="coffee-menu">
+        <option value="15000">Espresso</option>
+        <option value="20000">Latte</option>
+        <option value="20000">Cappuccino</option>
+        <option value="26000">Americano</option>
+        <option value="18000">Black Coffee</option>
+        <option value="28000">Macchiato</option>
+        <option value="35000">Latte Queen's Latte</option>
+        <option value="15000">Affogato</option>
+        <option value="11000">Irish Coffee</option>
+        <option value="32000">Mocha Glaze</option>
+      </select>
+
+      <label for="quantity">How Many Cups?</label>
+      <input
+        type="number"
+        id="quantity"
+        min="1"
+        value="1"
+      />
+
+      <label for="toppings">Any Extras?</label>
+      <select id="toppings">
+        <option value="0">None</option>
+        <option value="1000">Whipped Cream (+Rp1,000)</option>
+        <option value="2000">Caramel Syrup (+Rp2,000)</option>
+        <option value="3000">Chocolate Sprinkles (+Rp3,000)</option>
+      </select>
+
+      <button onclick="calculateTotal()">Calculate Total</button>
+
+      <p id="total-price">Your Total: Rp0</p>
+    </div>
+
+    <script>
+      function calculateTotal() {
+        var menuPrice = parseInt(document.getElementById("coffee-menu").value);
+        var quantity = parseInt(document.getElementById("quantity").value);
+        var toppingsPrice = parseInt(document.getElementById("toppings").value);
+
+        var totalPrice = quantity * (menuPrice + toppingsPrice);
+
+        //Total Harga
+        document.getElementById("total-price").textContent = "Your Total: Rp" + totalPrice.toLocaleString();
+      }
+    </script>
+  </body>
+</html>
